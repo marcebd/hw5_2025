@@ -1,0 +1,13 @@
+/* Marcela Billingslea */
+
+/* #STEP 2 Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.*/
+body {
+    font-family: "Poppins", serif;
+    background-image: url(../images/concrete_seamless.png);
+    background-color: #f1f1f1;
+}
+
+/* #STEP 3 Edit the css for the header tag (all instances) to use flex to match our example */
+ header {
+    
+ }
