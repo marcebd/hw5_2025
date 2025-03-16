@@ -1,6 +1,7 @@
 /* Marcela Billingslea */
+/* HW#5 CSS Flex W25 */
 
-/* Animate the logo with keyframes.  (Here is a keyframes reference.) It should start at a width of 25px and grow to 475px.  It should also start with an opacity of 0 and end with an opacity of 1. The animation should take 5 seconds and only happen when the page is loaded. **You can complete this step later in the process - it won’t affect the larger views.  */
+/* #STEP 1 Animate the logo with keyframes. It should start at a width of 25px and grow to 475px.  It should also start with an opacity of 0 and end with an opacity of 1. The animation should take 5 seconds and only happen when the page is loaded.*/
 @keyframes logo {
     from { width: 25px; opacity: 0;}
     to { width: 475px; opacity: 1;}
@@ -10,7 +11,7 @@
     animation: logo 5s;
 }
 
-/* #STEP 2 Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.*/
+/* #STEP 2 Edit the body element to use the Poppins font (using Google fonts) with serif as a backup. It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.*/
 body {
     font-family: "Poppins", serif;
     background-image: url(../images/concrete_seamless.png);
@@ -51,13 +52,13 @@ body {
     border-radius: 50px 50px 0 0;
  }
 
- /* #Step 7 Edit the css for the card class to match our example. Achieve this by using a flex-property to specify an initial “size” of 450px.  You need to think about this from a “flex” perspective and realize that flex-direction will affect the size of the elements.  You can see that in the mobile view they all have the same width. */
+ /* #Step 7 Edit the css for the card class to match our example. Achieve this by using a flex-property to specify an initial “size” of 450px.  You need to think about this from a “flex” perspective and realize that flex-direction will affect the size of the elements. They all have the same width. */
  .card {
     border-radius: 50px 50px 0 0;
     flex-basis: 450px;
  }
 
- /* #Step 8  Edit the css for the pricing class to match our example. You should use flex and the cards should be centered both horizontally and vertically. */
+ /* #Step 8 Edit the css for the pricing class to match our example. You should use flex and the cards should be centered both horizontally and vertically*/
 .pricing {
     display: flex;
     flex-wrap: wrap;
@@ -78,7 +79,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
 }
-
+/* The following specifications are for when the screen-size is greater than 900px */
 @media screen and (min-width: 900px) {
         /* STEP #11 Edit the css for the header tag (all instances) and the nav_links class to match our example using flex-properties. The logo should be as far to the left as possible and the links as far to the right as possible. Use flex properties, NOT position properties. */
         header {
@@ -97,7 +98,7 @@ body {
             flex-basis: 275px;
         }
 
-        /* STEP #13 Modify the first header (the one not inside main) so that it remains visible at the top of the screen even as we scroll down. Make sure that it is always visible. You can see an example of this in the video and in the screenshot at 1200px when scrolled. This is a challenge problem. You should not give or receive help when completing it. */
+        /* STEP #13 Modify the first header (the one not inside main) so that it remains visible at the top of the screen even as we scroll down. Make sure that it is always visible. You can see an example of this in the video and in the screenshot at 1200px when scrolled. */
         body > header {
             /* source: https://stackoverflow.com/questions/3593594/how-to-keep-the-header-static-always-on-top-while-scrolling */
             position: sticky;
@@ -115,7 +116,7 @@ body {
 
 @media print {
     /* #STEP 15 Change the font on your body to Arial with a backup value of  Helvetica */
-     /* #STEP 16 The background image should be removed. */
+    /* #STEP 16 The background image should be removed. */
     body {
         font-family: Arial, Helvetica;
         background-image: none;
@@ -130,7 +131,7 @@ body {
         justify-content: space-around;
     }
 
-    /* #STEP 18 Edit the pricing class so that the elements align along the bottom.  As long as it aligns along the bottom we don't care if the cards aren't the same height. */
+    /* #STEP 18 Edit the pricing class so that the elements align along the bottom. */
     .pricing {
         align-items: flex-end;
         flex-wrap: nowrap;
@@ -148,7 +149,7 @@ body {
         display: none;
     }
 
-    /* #STEP 21 Without using list-style-type add the thumbs up entity as shown in the cards. This is a challenge problem. You should not give or receive help when completing it.**For some people the thumbs up is not printing as yellow. That is fine. */
+    /* #STEP 21 Without using list-style-type add the thumbs up entity as shown in the cards. */
     .card ul li:nth-child(2)::after {
         content: "👍";
     }
