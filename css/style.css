@@ -7,7 +7,7 @@
     pricing: wrap
     gallery: wrap */
 
-/* #STEP 1 Animate the logo with keyframes. It should start at a width of 25px and grow to 475px.  It should also start with an opacity of 0 and end with an opacity of 1. The animation should take 5 seconds and only happen when the page is loaded.*/
+/* #STEP 1 Animate the logo with keyframes. It starts at a width of 25px and grow to 475px. It starts with an opacity of 0 and end with an opacity of 1. The animation takes 5 seconds and only happen when the page is loaded.*/
 @keyframes logo {
     from { width: 25px; opacity: 0;}
     to { width: 475px; opacity: 1;}
@@ -17,15 +17,15 @@
     animation: logo 5s; /* logo animation is the name of the animation above */
 }
 
-/* #STEP 2 Edit the body element to use the Poppins font (using Google fonts) with serif as a backup. It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.*/
+/* #STEP 2 Body element uses the Poppins font (using Google fonts) with serif as a backup. It uses the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.*/
 body {
     font-family: "Poppins", serif; /* poppings was imported from google fonts in the HTML */
-    background-image: url(../images/concrete_seamless.png);
-    background-color: #f1f1f1;
+    background-image: url(../images/concrete_seamless.png); /* background image */
+    background-color: #f1f1f1; /* backup color should appear in print view*/
 }
 
 /* #STEP 3 Edit the css for the header tag (all instances) to use flex to match our example */
-/* Affects all the header tags, Navigation, Prices, some li's */
+/* Affects all the header tags, Navigation, Prices, some li's. Makes them appear in a column and aligned to the center */
  header {
     display: flex;  
     flex-direction: column; /* Overwrites the row direction */
@@ -33,7 +33,7 @@ body {
  }
 
  /* #STEP 4 Edit the css for the nav_links class to use flex to match our example. Do not modify the list items or the links - modify the nav_links class to use flex. */
- /* Affects the Navigation links */
+ /* Affects the Navigation links maes then appear in a column and aligned to the center */
  .nav_links {
     display: flex;
     flex-direction: column; /* Overwrites the row direction */
@@ -55,12 +55,12 @@ body {
     solid 2px border using #45ADAD,
     20px of padding on the top and the bottom, 
     50px border-radius on the top left and right corners.*/
-/* Affects the header in the card class to add color and round corners */
+/* Affects the header in the card class to add color and round corners. Gives card a border, a background color and round the right left uppder corners*/
  .card > header {
     background-color: #288088;
     border: solid 2px #45ADAD;
-    padding: 20px 0 20px 0;
-    border-radius: 50px 50px 0 0;
+    padding: 20px 0 20px 0; /* Top and bottom padding */
+    border-radius: 50px 50px 0 0; /* Rounds corners of upper top corners */
  }
 
  /* #Step 7 Edit the css for the card class to match our example. Achieve this by using a flex-property to specify an initial “size” of 450px.  You need to think about this from a “flex” perspective and realize that flex-direction will affect the size of the elements. They all have the same width. */
@@ -98,12 +98,12 @@ body {
         /* STEP #11 Edit the css for the header tag (all instances) and the nav_links class to match our example using flex-properties. The logo should be as far to the left as possible and the links as far to the right as possible. Use flex properties, NOT position properties. */
         /* Affects all the header tags, Navigation, Prices, some li's */
         header {
-            flex-direction: row;
+            flex-direction: row; /* Overwrites the column direction in mobile view*/
             justify-content: space-between; /* Obtained from HW Instructions */
         }
         /* Affects the Navigation links */
         .nav_links {
-            flex-direction: row; /* Overwrites the column direction */
+            flex-direction: row; /* Overwrites the column direction in mobile view */
             align-items: center;
         }
 
@@ -145,9 +145,9 @@ body {
         width: 100%; /* This is to make sure the nav is the full width of the page */
     }
     .nav_links {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around; 
+        display: flex; /* Allows selection in print view */
+        flex-direction: row; /* Overwrites the column direction in mobile view */
+        justify-content: space-around; /* Make sure links are spaced out */
     }
 
     /* #STEP 18 Edit the pricing class so that the elements align along the bottom. */
@@ -165,7 +165,7 @@ body {
     /* #STEP 20 No part of the gallery should be visible. */
     .gallery,
     #gallery {
-        display: none;
+        display: none; /* Removes the gallery from the print view */
     }
 
     /* #STEP 21 Without using list-style-type add the thumbs up entity as shown in the cards. */
