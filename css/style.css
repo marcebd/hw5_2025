@@ -1,6 +1,12 @@
 /* Marcela Billingslea */
 /* HW#5 CSS Flex W25 */
 
+/* Flex items:
+    header
+    nav_links
+    pricing: wrap
+    gallery: wrap */
+
 /* #STEP 1 Animate the logo with keyframes. It should start at a width of 25px and grow to 475px.  It should also start with an opacity of 0 and end with an opacity of 1. The animation should take 5 seconds and only happen when the page is loaded.*/
 @keyframes logo {
     from { width: 25px; opacity: 0;}
@@ -8,34 +14,38 @@
 }
 
 #logo {
-    animation: logo 5s;
+    animation: logo 5s; /* logo animation is the name of the animation above */
 }
 
 /* #STEP 2 Edit the body element to use the Poppins font (using Google fonts) with serif as a backup. It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.*/
 body {
-    font-family: "Poppins", serif;
+    font-family: "Poppins", serif; /* poppings was imported from google fonts in the HTML */
     background-image: url(../images/concrete_seamless.png);
     background-color: #f1f1f1;
 }
 
 /* #STEP 3 Edit the css for the header tag (all instances) to use flex to match our example */
+/* Affects all the header tags, Navigation, Prices, some li's */
  header {
-    display: flex;
-    flex-direction: column;
+    display: flex;  
+    flex-direction: column; /* Overwrites the row direction */
     align-items: center;
  }
 
  /* #STEP 4 Edit the css for the nav_links class to use flex to match our example. Do not modify the list items or the links - modify the nav_links class to use flex. */
+ /* Affects the Navigation links */
  .nav_links {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Overwrites the row direction */
     align-items: center;
  }
 
  /* #STEP 5 Style the links so that they have the same color even after they have been visited.*/
+ /* Sets a specific color for the links */
  a {
     color: #0000EE;
  }
+ /* Makes sure the visited links are the same color as the unvisited links */
  a:visited {
     color: default;
  }
@@ -45,6 +55,7 @@ body {
     solid 2px border using #45ADAD,
     20px of padding on the top and the bottom, 
     50px border-radius on the top left and right corners.*/
+/* Affects the header in the card class to add color and round corners */
  .card > header {
     background-color: #288088;
     border: solid 2px #45ADAD;
@@ -53,15 +64,17 @@ body {
  }
 
  /* #Step 7 Edit the css for the card class to match our example. Achieve this by using a flex-property to specify an initial “size” of 450px.  You need to think about this from a “flex” perspective and realize that flex-direction will affect the size of the elements. They all have the same width. */
+ /* Cards are the containers for the pricing information */
  .card {
-    border-radius: 50px 50px 0 0;
-    flex-basis: 450px;
+    border-radius: 50px 50px 0 0; /* Added selector in order to remove white lasting border */
+    flex-basis: 450px; /* This is the size of the card, initial size*/
  }
 
  /* #Step 8 Edit the css for the pricing class to match our example. You should use flex and the cards should be centered both horizontally and vertically*/
+ /* Pricing is the container for the cards */
 .pricing {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Will have to be overriden for different views. What makes the images change view when bigger screen.*/
     justify-content: center;
     align-items: center;
 }
@@ -74,31 +87,34 @@ body {
 }
 
 /* STEP #10 Edit the css for the gallery class to use flex to match our example. (You may want to look at the screen shots from 1200px and 1500px as well -  the changes are not from media queries, but from the use of flex.) */
+/* Gallery is the container for the images */
 .gallery {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Will have to be overriden for different views. What makes the images change view when bigger screen.*/
     justify-content: center;
 }
 /* The following specifications are for when the screen-size is greater than 900px */
 @media screen and (min-width: 900px) {
         /* STEP #11 Edit the css for the header tag (all instances) and the nav_links class to match our example using flex-properties. The logo should be as far to the left as possible and the links as far to the right as possible. Use flex properties, NOT position properties. */
+        /* Affects all the header tags, Navigation, Prices, some li's */
         header {
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-between; /* Obtained from HW Instructions */
         }
-
+        /* Affects the Navigation links */
         .nav_links {
-            flex-direction: row;
+            flex-direction: row; /* Overwrites the column direction */
             align-items: center;
         }
 
         /* STEP #12 Edit the css for the pricing and card classes to match our example. Part of achieving this is by using a flex-property to specify a “size” of 275px. Notice that the elements do not have the same height, but do have the same width. */
         .card,
         .pricing {
-            flex-basis: 275px;
+            flex-basis: 275px; /* This is the size of the card, initial size*/
         }
 
         /* STEP #13 Modify the first header (the one not inside main) so that it remains visible at the top of the screen even as we scroll down. Make sure that it is always visible. You can see an example of this in the video and in the screenshot at 1200px when scrolled. */
+        /* Affects only the first header, first child of the header body */
         body > header {
             /* source: https://stackoverflow.com/questions/3593594/how-to-keep-the-header-static-always-on-top-while-scrolling */
             position: sticky;
@@ -107,6 +123,7 @@ body {
         }
 }
 /* The following specifications are for when the user prefers reduced motion. */
+/* Test by going to Rendering in Chrome Dev Tools and selecting "Prefers Reduced Motion" */
 @media (prefers-reduced-motion) {
     /* #STEP 14 The logo should appear but not be animated if prefers-reduced-motion is selected in the accessibility preferences. */
     #logo {
@@ -115,33 +132,34 @@ body {
 }
 
 /* The following specifications are for when the page is printed in portrait mode. */
+/* Test by going to Rendering in Chrome Dev Tools and selecting "Emulate CSS Media" and then "print" */
 @media print {
     /* #STEP 15 Change the font on your body to Arial with a backup value of  Helvetica */
     /* #STEP 16 The background image should be removed. */
     body {
-        font-family: Arial, Helvetica;
-        background-image: none;
+        font-family: Arial, Helvetica; /* overwrites the font-family in the body */
+        background-image: none; /* removes the background image and uses default color */
     }
     /* #STEP 17 Edit the nav/nav_links elements so that they are spaced according to the image above. */
     nav {
-        width: 100%;
+        width: 100%; /* This is to make sure the nav is the full width of the page */
     }
     .nav_links {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-around; 
     }
 
     /* #STEP 18 Edit the pricing class so that the elements align along the bottom. */
     .pricing {
-        align-items: flex-end;
-        flex-wrap: nowrap;
+        align-items: flex-end; /* This makes the cards align to the bottom */
+        flex-wrap: nowrap; /* Will have to be overriden for different views. What makes the images change view when bigger screen.*/
     }
 
     /* #STEP 19 The card elements should have a solid border 2px of #45ADDD and use flex-basis of 325px. */
     .card {
         border: solid 2px #45ADDD;
-        flex-basis: 325px;
+        flex-basis: 325px; /* This is the size of the card, initial size*/
     }
 
     /* #STEP 20 No part of the gallery should be visible. */
@@ -151,6 +169,7 @@ body {
     }
 
     /* #STEP 21 Without using list-style-type add the thumbs up entity as shown in the cards. */
+    /* Selects the second list item in the card and adds a thumbs up emoji */
     .card ul li:nth-child(2)::after {
         content: "👍";
     }
