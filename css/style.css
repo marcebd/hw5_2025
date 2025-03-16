@@ -106,7 +106,7 @@ body {
             z-index: 999;
         }
 }
-
+/* The following specifications are for when the user prefers reduced motion. */
 @media (prefers-reduced-motion) {
     /* #STEP 14 The logo should appear but not be animated if prefers-reduced-motion is selected in the accessibility preferences. */
     #logo {
@@ -114,6 +114,7 @@ body {
     }
 }
 
+/* The following specifications are for when the page is printed in portrait mode. */
 @media print {
     /* #STEP 15 Change the font on your body to Arial with a backup value of  Helvetica */
     /* #STEP 16 The background image should be removed. */
